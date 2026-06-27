@@ -12,8 +12,8 @@ exports.handler = async (event) => {
     return { statusCode: 204, headers: CORS_HEADERS, body: "" };
   }
 
-  // Build target URL: everything after /api/ is the path
-  const path = event.path.replace(/^\/api\//, "/").replace(/^\/\.netlify\/functions\/proxy\/?/, "/");
+  // Strip the Netlify function prefix to get the actual path
+  const path = event.path.replace(/^\/\.netlify\/functions\/proxy\/?/, "/");
   const qs = event.rawQuery ? `?${event.rawQuery}` : "";
   const targetUrl = `${TARGET_ORIGIN}${path}${qs}`;
 
