@@ -1,0 +1,6 @@
+{
+  "name": "ccwbfs-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CORS proxy for bfs-web.ccw.site via Netlify Functions"
+}
